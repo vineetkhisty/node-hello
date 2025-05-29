@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo "installing something"
+
+  build:
+    commands:
+      - echo "we are in build block"
+      - echo "We will run some tests"
+      - grep -fq "Hello" index.js
+
+  post_build:
+    commands:
+      - echo "Build completed successfully"
+
+# artifacts:
+#   files:
+#     - '**/*'
+#   discard-paths: no
